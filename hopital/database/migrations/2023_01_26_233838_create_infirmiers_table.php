@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('infirmiers', function (Blueprint $table) {
             $table->id();
+            $table->string('ap_infirmier')->nullable();
+            // $table->integer('charge')->default(0);
+            $table->string('experience')->nullable();
+            $table->foreignIdFor(User::class)->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignIdFor(Specialite::class)->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('created_by_id')->nullable()->constrained('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('updated_by_id')->nullable()->constrained('users')->onDelete('cascade')->onUpdate('cascade');
+
             $table->timestamps();
         });
     }
