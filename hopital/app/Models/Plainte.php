@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Plainte extends Model
 {
     use HasFactory;
+    protected $fillable=[
+        'type_plainte',
+        'created_by_id',
+        'updated_by_id'
+    ];
 }

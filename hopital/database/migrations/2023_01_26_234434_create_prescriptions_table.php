@@ -21,7 +21,7 @@ return new class extends Migration
             $table->id();
             $table->string('dosage')->nullable();
             $table->string('frequence')->nullable();
-            $table->string('durée')->nullable();
+            $table->string('duree')->nullable();
             $table->string('moment_repas')->nullable();
             $table->string('instruction')->nullable();
             $table->string('route')->nullable();

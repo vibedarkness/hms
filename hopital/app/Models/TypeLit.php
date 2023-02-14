@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class TypeLit extends Model
 {
     use HasFactory;
+    protected $fillable=[
+        'code',
+        'name',
+        'status',
+        'created_by_id',
+        'updated_by_id'
+
+    ];
 }

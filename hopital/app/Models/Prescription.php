@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Prescription extends Model
 {
     use HasFactory;
+
+    protected $fillable=[
+        'dosage',
+        'frequence',
+        'duree',
+        'moment_repas',
+        'instruction',
+        'route',
+    ];
 }
