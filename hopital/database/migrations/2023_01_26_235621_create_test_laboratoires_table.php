@@ -1,9 +1,9 @@
 <?php
 
-use App\Models\BanqueSang;
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\StockSang;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -14,10 +14,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('stock_sangs', function (Blueprint $table) {
+        Schema::create('test_laboratoires', function (Blueprint $table) {
             $table->id();
-
-            $table->foreignIdFor(BanqueSang::class)->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->string('name')->nullable();
+            $table->integer('prix')->default(0);
+            $table->integer('pourcentage')->default(0);
+            $table->foreignIdFor(StockSang::class)->nullable()->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('created_by_id')->nullable()->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('updated_by_id')->nullable()->constrained('users')->onDelete('cascade')->onUpdate('cascade');
 
@@ -32,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stock_sangs');
+        Schema::dropIfExists('test_laboratoires');
     }
 };

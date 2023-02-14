@@ -58,7 +58,7 @@ return new class extends Migration
 
             $table->string('taxes')->default(0);
             $table->string('discount')->default(0);
-            $table->string('invoice_logo')->nullable();
+
 
             
             
